@@ -1,0 +1,861 @@
+{
+  "info": {
+    "_postman_id": "cffaf0dd-1967-4af2-aa97-72d987afa38f",
+    "name": "Splitwise API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "57098088",
+    "_collection_link": "https://go.postman.co/collection/57098088-cffaf0dd-1967-4af2-aa97-72d987afa38f?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = pm.response.json();\r\nif (jsonData.data && jsonData.data.token) {\r\n    pm.environment.set(\"token\", jsonData.data.token);\r\n}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Afia\",\r\n  \"email\": \"afia@example.com\",\r\n  \"password\": \"password\",\r\n  \"password_confirmation\": \"password\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/register",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "var jsonData = pm.response.json();\r\nif (jsonData.data && jsonData.data.token) {\r\n    pm.environment.set(\"token\", jsonData.data.token);\r\n}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"alia@example.com\",\r\n  \"password\": \"password\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/login",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/logout",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "logout"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Me Profile",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/me",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "me"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Groups",
+      "item": [
+        {
+          "name": "Create Group",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Weekend Trip\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/groups",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "groups"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List Groups",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/groups",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "groups"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "View Group",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/groups/",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "groups",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add Member",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"user_id\": \"6ac4ddacf78215f65c0c1c45\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/groups/6ac4cd51ead53973390aed20/expenses",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "groups",
+                "6ac4cd51ead53973390aed20",
+                "expenses"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Remove Member",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/groups/6ac4cd51ead53973390aed20/members/6ac4cd4fead53973390aed16",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "groups",
+                "6ac4cd51ead53973390aed20",
+                "members",
+                "6ac4cd4fead53973390aed16"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Expenses",
+      "item": [
+        {
+          "name": "Create Expense",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{token }}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"description\": \"Dinner\",\r\n  \"amount\": 12000,\r\n  \"paid_by\": \"6ac4ddacf78215f65c0c1c45\",\r\n  \"split_type\": \"equal\",\r\n  \"participants\": [\r\n    {\"user_id\": \"6ac4ddacf78215f65c0c1c45\"},\r\n    {\"user_id\": \"6ac4cd4fead53973390aed17\"}\r\n  ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/groups/6ac4cd51ead53973390aed20/expenses",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "groups",
+                "6ac4cd51ead53973390aed20",
+                "expenses"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List Group Expenses",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/groups/6ac4cd51ead53973390aed20/expenses?page=1&per_page=20",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "groups",
+                "6ac4cd51ead53973390aed20",
+                "expenses"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "per_page",
+                  "value": "20"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Single Expense Details",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/expenses/6ac5f5e20abb437945054cd4",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "expenses",
+                "6ac5f5e20abb437945054cd4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Expense",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"description\": \"Updated Dinner\",\r\n  \"amount\": 15000,\r\n  \"paid_by\": \"6ac4ddacf78215f65c0c1c45\",\r\n  \"split_type\": \"equal\",\r\n  \"participants\": [\r\n    {\"user_id\": \"6ac4ddacf78215f65c0c1c45\"},\r\n    {\"user_id\": \"6ac4cd4fead53973390aed17\"}\r\n  ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/expenses/6ac5f5e20abb437945054cd4",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "expenses",
+                "6ac5f5e20abb437945054cd4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Expense",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/expenses/6ac4cd51ead53973390aed23",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "expenses",
+                "6ac4cd51ead53973390aed23"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search Expenses",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/groups/6ac4cd51ead53973390aed20/expenses?search=dinner",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "groups",
+                "6ac4cd51ead53973390aed20",
+                "expenses"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "dinner"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Filter Expenses by Category",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/groups/6ac4cd51ead53973390aed20/expenses?category=food",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "groups",
+                "6ac4cd51ead53973390aed20",
+                "expenses"
+              ],
+              "query": [
+                {
+                  "key": "category",
+                  "value": "food"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Balances & Settlements",
+      "item": [
+        {
+          "name": "Check Group Balances",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"success\": true,\r\n    \"message\": \"Group balances retrieved successfully.\",\r\n    \"data\": {\r\n        \"balances\": [\r\n            {\r\n                \"user_id\": \"6ac4ddacf78215f65c0c1c45\",\r\n                \"net_balance\": 3000\r\n            },\r\n            {\r\n                \"user_id\": \"6ac4cd4fead53973390aed17\",\r\n                \"net_balance\": -3000\r\n            }\r\n        ]\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/groups/6ac4cd51ead53973390aed20/balances",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "groups",
+                "6ac4cd51ead53973390aed20",
+                "balances"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Settlement",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "paid_to",
+                  "value": "6ac4cd4fead53973390aed17",
+                  "type": "text"
+                },
+                {
+                  "key": "amount",
+                  "value": "3000",
+                  "type": "text"
+                },
+                {
+                  "key": "note",
+                  "value": "Dinner payment receipt",
+                  "type": "text"
+                },
+                {
+                  "key": "attachment",
+                  "type": "file",
+                  "src": [
+                    "/C:/Users/afian/Pictures/Screenshots/Screenshot 2026-10-07 124535.png"
+                  ]
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/groups/6ac4cd51ead53973390aed20/settlements",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "groups",
+                "6ac4cd51ead53973390aed20",
+                "settlements"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Settlements List",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/groups/6ac4cd51ead53973390aed20/settlements",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "groups",
+                "6ac4cd51ead53973390aed20",
+                "settlements"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Validation & Negative Tests",
+      "item": [
+        {
+          "name": "Duplicate Email Register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"afi@example.com\",\r\n    \"email\": \"existing_user@example.com\",\r\n    \"password\": \"password\",\r\n    \"password_confirmation\": \"password\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/register",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Invalid Login Credentials",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"ali@example.com\",\r\n    \"password\": \"wrong_password\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/login",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Invalid Exact Split Calculation",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"description\": \"Lunch\",\r\n    \"amount\": 10000,\r\n    \"paid_by\": \"6ac4ddacf78215f65c0c1c45\",\r\n    \"split_type\": \"exact\",\r\n    \"participants\": [\r\n        {\r\n            \"user_id\": \"6ac4ddacf78215f65c0c1c45\",\r\n            \"amount\": 5000\r\n        },\r\n        {\r\n            \"user_id\": \"6ac4cd4fead53973390aed17\",\r\n            \"amount\": 4000\r\n        }\r\n    ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/groups/6ac4cd51ead53973390aed20/expenses",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "groups",
+                "6ac4cd51ead53973390aed20",
+                "expenses"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Invalid Percentage Split",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"description\": \"Party\",\r\n    \"amount\": 5000,\r\n    \"paid_by\": \"6ac4ddacf78215f65c0c1c45\",\r\n    \"split_type\": \"percentage\",\r\n    \"participants\": [\r\n        {\r\n            \"user_id\": \"6ac4ddacf78215f65c0c1c45\",\r\n            \"percentage\": 50\r\n        },\r\n        {\r\n            \"user_id\": \"6ac4cd4fead53973390aed17\",\r\n            \"percentage\": 40\r\n        }\r\n    ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/groups/6ac4cd51ead53973390aed20/expenses",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "groups",
+                "6ac4cd51ead53973390aed20",
+                "expenses"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Settlement to Self",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "paid_to",
+                  "value": "6ac4ddacf78215f65c0c1c45",
+                  "type": "text"
+                },
+                {
+                  "key": "amount",
+                  "value": "1000",
+                  "type": "text"
+                },
+                {
+                  "key": "note",
+                  "value": "Self payment test",
+                  "type": "text"
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://127.0.0.1:8000/api/groups/6ac4cd51ead53973390aed20/settlements",
+              "protocol": "http",
+              "host": [
+                "127",
+                "0",
+                "0",
+                "1"
+              ],
+              "port": "8000",
+              "path": [
+                "api",
+                "groups",
+                "6ac4cd51ead53973390aed20",
+                "settlements"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token }}",
+        "type": "string"
+      }
+    ]
+  }
+}
